@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="successTitleTag">Payment Status</title>
+  <style>
+    :root{--black:#050505;--red:#e50914;--white:#fff;--muted:#666;--green:#16a34a;--line:rgba(0,0,0,.10)}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Inter,Arial,Helvetica,sans-serif;background:radial-gradient(circle at 20% -10%,rgba(229,9,20,.45),transparent 28%),linear-gradient(180deg,#070707,#111 55%,#050505);color:#fff;display:grid;place-items:center;padding:18px}
+    .card{width:min(520px,100%);background:#fff;color:#080808;border-radius:30px;padding:24px;box-shadow:0 30px 90px rgba(0,0,0,.55);text-align:left}
+    .logo{width:72px;height:72px;border-radius:18px;object-fit:cover;background:#000;border:1px solid rgba(0,0,0,.12);display:block;margin-bottom:16px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:950;background:rgba(229,9,20,.10);color:var(--red);margin-bottom:12px}
+    .pill.ok{background:rgba(22,163,74,.12);color:var(--green)}
+    h1{margin:0 0 8px;font-size:28px;letter-spacing:-.7px;color:#080808}
+    p{margin:0;color:#555;line-height:1.6}
+    .summary{margin:18px 0;border:1px solid var(--line);background:#f6f6f6;border-radius:18px;overflow:hidden}
+    .row{display:flex;justify-content:space-between;gap:14px;padding:12px 14px;border-bottom:1px solid var(--line);font-size:13px}.row:last-child{border-bottom:0}.row span{color:#666}.row strong{text-align:right;color:#080808}
+    .msg{border:1px dashed rgba(229,9,20,.35);background:rgba(229,9,20,.06);border-radius:16px;padding:12px;font-size:13px;color:#222;line-height:1.5;margin:12px 0;white-space:pre-wrap}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.btn{border:0;border-radius:999px;padding:13px 15px;font-weight:950;text-align:center;cursor:pointer;text-decoration:none}.primary{background:var(--red);color:#fff}.dark{background:#080808;color:#fff}.light{background:#eee;color:#080808}.btn.disabled{opacity:.55;pointer-events:none}
+    .small{font-size:12px;color:#777;margin-top:12px}.loading{display:inline-block;width:14px;height:14px;border-radius:50%;border:3px solid rgba(229,9,20,.20);border-top-color:var(--red);animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:520px){.actions{grid-template-columns:1fr}.card{padding:20px;border-radius:24px}}
+  </style>
+</head>
+<body data-page="success">
+  <main class="card">
+    <img id="logo" class="logo" src="numologo.png" alt="Logo">
+    <div id="statusPill" class="pill"><span class="loading"></span>Semak payment...</div>
+    <h1 id="title">Sila tunggu sekejap</h1>
+    <p id="desc">Kami sedang semak status payment anda.</p>
+
+    <div class="summary">
+      <div class="row"><span id="successOrderLabel">Order ID</span><strong id="orderId">-</strong></div>
+      <div class="row"><span id="successProductLabel">Produk</span><strong id="product">-</strong></div>
+      <div class="row"><span id="successPackageLabel">Pakej</span><strong id="package">-</strong></div>
+      <div class="row"><span id="successAmountLabel">Harga</span><strong id="amount">-</strong></div>
+      <div class="row"><span id="successStatusLabel">Status</span><strong id="status">Checking...</strong></div>
+    </div>
+
+    <div id="msgBox" class="msg">Mesej Telegram akan disediakan selepas status payment disahkan.</div>
+
+    <div class="actions">
+      <a id="telegramBtn" class="btn primary disabled" href="#">PM Admin</a>
+      <button id="refreshBtn" class="btn dark" type="button">Semak Semula</button>
+      <a id="backWebsiteBtn" class="btn light" href="index.html">Kembali Website</a>
+    </div>
+    <div id="smallNote" class="small">Jika Telegram tidak terbuka automatik, tekan button PM Admin.</div>
+  </main>
+
+  <script src="app2.js?v=8-text-config-separated"></script>
+  <script src="app.js?v=8-text-config-separated"></script>
+</body>
+</html>
