@@ -68,7 +68,7 @@ window.NUMO_DIRECT_CONFIG = {
     faqTitle: "FAQ Sebelum Order",
     faqDesc: "Sila baca dahulu sebelum PM",
 
-    footerText: "© 2026 EizLiya Stream Hub.",
+    footerText: "© 2026 NUMO VENTURES - Kami janji tak sidai",
     stickyText: "Nak order sekarang?",
     stickyButton: "Lihat Pakej",
 
